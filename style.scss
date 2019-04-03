@@ -1,0 +1,37 @@
+/*
+Theme Name: Fus Custom Tattoo Theme
+Theme URI: http://fustattoos.com
+Description: Fus Custom Tattoos 2015 Wordpress Theme
+Author: Kevin Thomson @kevinbthomson
+Author URI: http://kevinbthomson.com
+Version: 1.1
+*/
+
+
+/*Modules*/
+@import 'css/modules/reset';
+
+@import 'css/modules/variables';
+
+@import 'css/modules/mixins';
+
+/* includes the grid */
+@import 'css/modules/functions';
+
+
+/*Partials*/
+@import 'css/partials/lightbox';
+
+@import 'css/partials/body';
+
+@import 'css/partials/header';
+
+@import 'css/partials/main';
+
+@import 'css/partials/artists';
+
+@import 'css/partials/aside';
+
+@import 'css/partials/footer';
+
+

@@ -1,0 +1,80 @@
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+html {
+	font-size: 100%;
+
+	position: relative;
+	background: #444;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	&.active {
+		position: fixed;
+	}
+}
+
+body {
+	font-family: Helmet, Freesans, sans-serif;
+	line-height: 1.5;
+	position: relative;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	transition: left .5s;
+
+	&.active {
+		left: 80%;
+	}
+}
+
+
+/* off-black for text. */
+body, select, input, textarea {color: #333;}
+
+a {color: $dark-blue;}
+a:hover {color: #69f;}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: $blue; color: #fff; text-shadow: none;}
+::selection {background: $blue; color: #fff; text-shadow: none;}
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: $blue;}
+
+ins {background-color: $blue; color: #000; text-decoration: none;}
+mark {background-color: $blue; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+
+/* 
+-------------------------------------------------------------------------------*/
+
+/*Generic wrapper container for responsive widths*/
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+
+	@include breakpoint(laptop) {
+		width: 90%;
+	}
+}
+
+/* Show on Mobile Menu 'active' */
+.mobile-menu-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(black, 0.5);
+
+	&.active {
+		display: block;
+	}
+}

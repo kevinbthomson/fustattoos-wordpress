@@ -1,0 +1,98 @@
+footer {
+	position: relative;
+	width: 100%;
+	height: auto;
+	clear: both;
+
+	padding: $margin 0;
+	background: $dark-blue;
+	
+	color: white;
+	@include body-copy;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+
+	@include breakpoint(tablet) {
+		min-height: 300px;
+	}
+
+	a, a:link {
+		color: white;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: white;
+		text-decoration: underline;
+	}
+	
+	p {
+		margin: 0;
+
+		strong {
+			@include hwt-slab;
+		}
+
+		&.copyright {
+			width: 100%;
+			clear: both;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+	
+	ul {
+		margin: 0;
+		
+		li {
+			position: relative;
+			
+			a {
+				
+			}
+
+			ul {
+				float: left;
+				
+				left: 0;
+				margin: 0;
+				
+				li {
+					display: block;
+					width: 100%;
+
+					a {
+						
+					}
+				}
+			}
+		}
+	}
+
+	.widget {
+
+		width: 100%;
+		margin: 0 0 $margin 0;
+		padding: 0 $margin;
+
+		h2 {
+			@include hwt;
+			@include font-size(16px);
+			margin: 0;
+		}
+
+		@include breakpoint(phablet) {
+			width: 50%;
+			float: left;
+
+			&.widget_text {
+				float: right;
+				text-align: right;
+			}
+		}
+
+		@include breakpoint(laptop) {
+			padding: 0;
+		}
+
+	}
+}
