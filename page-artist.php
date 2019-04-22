@@ -17,6 +17,7 @@
 			</header>
 
 			<div id="bio">
+				<?php the_post_thumbnail('thumbnail'); ?>
 				<?php the_content(); ?>
 			</div>
 			

@@ -1,7 +1,4 @@
-// remap jQuery to $
-(function($){
-
-$(document).ready(function() {
+$(function() {
 
 	// the Window width
 	var width = $(window).width();
@@ -88,5 +85,3 @@ $(document).ready(function() {
 	});
 
 }); // /document.ready
-
-})(window.jQuery);

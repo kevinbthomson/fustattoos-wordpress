@@ -8,6 +8,8 @@
 
 	// Allow plugin shortcode in sidebar widgets
 	add_filter('widget_text', 'do_shortcode');
+
+	add_theme_support( 'post-thumbnails' );
 	
 	// Clean up the <head>
 	function removeHeadLinks() {
@@ -19,7 +21,7 @@
 	// Load up some google-hosted Jquery in the Footer
 	if( !is_admin()){
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"), false, '1.11.2', true);
+		wp_register_script('jquery', ("https://code.jquery.com/jquery-3.4.0.min.js"), false, '3.4.0', true);
 		wp_enqueue_script('jquery');
 	}
 

@@ -1,0 +1,204 @@
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  @include mainBG;
+
+  @include breakpoint(tablet) {
+    padding-bottom: $margin;
+  }
+
+  header {
+    display: table;
+    width: 100%;
+    height: 12rem;
+
+    background-image: url(images/artist-headers/joey_vernon.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: white;
+      @include hwt;
+      @include font-size(28px);
+      line-height: 1;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.325);
+
+      @include breakpoint(phablet) {
+        @include font-size(36px);
+      }
+
+      @include breakpoint(tablet) {
+        @include font-size(48px);
+      }
+    }
+  } /* /article header */
+}
+
+article {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @include hwt-slab;
+    color: $dark-gold;
+  }
+
+  h2 {
+    @include font-size(22px);
+  }
+
+  h3 {
+    @include font-size(20px);
+  }
+
+  h4 {
+    @include font-size(18px);
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  dl {
+    margin: 0 0 $margin 0;
+  }
+
+  ul {
+    list-style: disc;
+    padding: 0 0 0 $margin;
+  }
+
+  ol {
+    padding: 0 0 0 $margin;
+  }
+
+  /*Main Page Content*/
+  .content {
+    width: 100%;
+    padding: $margin $margin 0 $margin;
+    overflow: hidden;
+
+    /* Bold the first paragraph on the page */
+    p:first-child {
+      @include hwt-slab;
+      color: $dark-gold;
+      text-shadow: 0 1px 0 rgba(white, 0.8);
+    }
+
+    .home & {
+      columns: 1;
+
+      @include breakpoint(phablet) {
+        columns: 2;
+
+        p:first-child {
+          column-span: all;
+        }
+      }
+    }
+
+    @include breakpoint(tablet) {
+      float: left;
+      width: 60%;
+    }
+
+    @include breakpoint(laptop) {
+      width: 55%;
+      margin-left: 5%;
+      padding-left: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .alignright {
+      @include breakpoint(tablet) {
+        width: auto;
+        float: right;
+        margin: 0 0 $margin $margin;
+      }
+    }
+
+    .alignleft {
+      @include breakpoint(tablet) {
+        width: auto;
+        float: left;
+        margin: 0 $margin $margin 0;
+      }
+    }
+  } /* /.content */
+
+  /* Contact Form 7 */
+  .wpcf7 {
+    form.wpcf7-form {
+      label {
+        &::after {
+          content: ":";
+        }
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        height: 2em;
+        padding: 0.5rem;
+        border: none;
+        background: #ccc;
+
+        &:focus {
+          outline: none;
+          color: white;
+          background: $dark-gold;
+        }
+
+        @include breakpoint(tablet) {
+          width: 60%;
+        }
+      }
+
+      textarea {
+        @extend input[type="text"];
+        height: 16rem;
+
+        @include breakpoint(tablet) {
+          width: 100%;
+        }
+      }
+
+      input[type="submit"] {
+        color: white;
+        background: $dark-gold;
+        padding: 0.5rem $margin;
+        border: none;
+      }
+    }
+
+    img.ajax-loader {
+      width: 16px;
+      height: 16px;
+      max-width: 16px;
+    }
+  }
+
+  div.wpcf7-response-output {
+    line-height: 1.2;
+    margin: 0 0 $margin 0;
+    padding: 0.5rem;
+  }
+
+  /*Contact Form 7 Error message*/
+  .wpcf7-validation-errors,
+  .wpcf7-mail-sent-ng {
+    background: red !important;
+    border-color: red !important;
+    color: white;
+  }
+} /* /article */
