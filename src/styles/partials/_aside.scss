@@ -2,6 +2,7 @@ aside {
   padding: $margin;
   width: 100%;
   background: rgba(black, 0.2);
+  background: lighten($gold, 20%);
   text-shadow: 0 1px 1px rgba(white, 0.5);
 
   h2 {

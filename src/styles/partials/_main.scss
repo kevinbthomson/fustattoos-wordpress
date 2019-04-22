@@ -4,6 +4,7 @@ main {
   overflow: hidden;
   margin: 0;
   padding: 0;
+
   @include mainBG;
 
   @include breakpoint(tablet) {
@@ -14,6 +15,7 @@ main {
     display: table;
     width: 100%;
     height: 12rem;
+    border-bottom: 1px solid white;
 
     background-image: url(images/artist-headers/joey_vernon.jpg);
     background-position: center;
@@ -117,6 +119,7 @@ article {
 
     img {
       width: 100%;
+      height: auto;
     }
 
     .alignright {
