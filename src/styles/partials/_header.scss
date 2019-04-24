@@ -114,6 +114,7 @@ header#main-header {
     margin: 0 auto;
 
     background-image: url(images/fus-logo.svg);
+    // background-image: url("./images/fusLogo.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -200,7 +201,7 @@ header#main-header {
 
           @include breakpoint(tablet) {
             position: absolute;
-            top: 2.5rem;
+            top: 3rem;
             width: 12rem;
 
             li {

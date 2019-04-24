@@ -16,7 +16,7 @@
   "scripts": {
     "build-task:scss-compile": "node-sass-chokidar --source-map true src/styles/ -o ./",
     "build-task:autoprefixer": "postcss ./*.css --use autoprefixer -d ./",
-    "build-task:minify": "postcss ./style.css --replace",
+    "build-task:minify": "postcss stylesSrc.css > style.css",
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/styles/**/*.scss' -c 'npm run sass:build'",
     "dev": "npm-run-all -p sass:*"

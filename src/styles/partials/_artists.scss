@@ -118,10 +118,6 @@
         padding: 0.5rem;
         line-height: 0;
 
-        &:first-child {
-          /*width: 100%;*/
-        }
-
         @include breakpoint(phablet) {
           width: 25%;
         }
