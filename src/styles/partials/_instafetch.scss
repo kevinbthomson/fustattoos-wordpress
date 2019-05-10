@@ -1,0 +1,73 @@
+#instas {
+  display: flex;
+  max-width: 100%;
+
+  article {
+    flex: 1;
+    background: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    border: 1px solid #ccc;
+    padding: 10px 10px 0 10px;
+    transform: rotate(2deg) translateY(-10px);
+    transition: all 0.4s ease-out;
+
+    &:nth-child(odd) {
+      transform: rotate(-2deg);
+    }
+
+    &:nth-child(odd) {
+      transform: rotate(-2deg) translateY(-20px);
+    }
+
+    // Hide the last 2 grams
+    &:nth-child(3),
+    &:nth-child(4) {
+      display: none;
+    }
+
+    // Show the last 2 grams
+    @include breakpoint(tablet) {
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: block;
+      }
+    }
+
+    &:hover {
+      z-index: 1100;
+      transform: rotate(0) scale(1.1);
+    }
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+      font-size: 0.8em;
+      padding: 10px 0 0 0;
+      line-height: 1;
+
+      @include breakpoint(tablet) {
+        white-space: normal;
+        overflow: visible;
+        max-width: 100%;
+        // max-height: 2em;
+      }
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    figure {
+      margin: 0;
+
+      img {
+        border-radius: 4px;
+        max-width: 100%;
+      }
+    }
+  }
+}

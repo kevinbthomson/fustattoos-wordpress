@@ -22,7 +22,14 @@
 			</div>
 			
 			<div id="portfolio">
-				<?php the_block( $name, $args ); ?>
+				<!-- Advanced custom fields w/ Multiple content blocks fallback -->
+				<?php
+					if (get_field('thumbnails')) {
+						the_field('thumbnails');
+					} else {
+						the_block( $name, $args );
+					}
+				?>
 			</div>
 
 		</article>

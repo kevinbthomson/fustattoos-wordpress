@@ -56,7 +56,7 @@ Usage:
       @content;
     }
   } @else if $point == tablet {
-    @media (min-width: 769px) {
+    @media (min-width: 768px) {
       @content;
     }
   } @else if $point == phablet {

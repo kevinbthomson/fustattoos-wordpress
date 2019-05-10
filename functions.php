@@ -18,26 +18,25 @@
 	}
 
 
-	// Load up some google-hosted Jquery in the Footer
-	if( !is_admin()){
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("https://code.jquery.com/jquery-3.4.0.min.js"), false, '3.4.0', true);
-		wp_enqueue_script('jquery');
+
+	//////////////////////
+	// Javascript
+	function fustattoos_theme_js() {
+    wp_deregister_script('jquery');
+    
+		wp_enqueue_script( 'jquery_js', 'https://code.jquery.com/jquery-3.4.0.min.js', '', '', true);
+
+    wp_enqueue_script( 'tether_js', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', '', '', true);
+
+    wp_enqueue_script( 'instafetch', 'https://cdnjs.cloudflare.com/ajax/libs/instafetch.js/1.5.0/instafetch.min.js', '', '', true);
+
+    wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox.min.js', '', '', true );
+
+    wp_enqueue_script( 'main_js', get_template_directory_uri() . '/js/functions.js', '', '', true);
 	}
 
-	// Load lightbox.js
-	function lightbox_js() {
-		wp_register_script('lightbox', get_template_directory_uri() . '/js/lightbox.min.js', false, '', true);
-		wp_enqueue_script('lightbox');
-	}
-	add_action('wp_enqueue_scripts', 'lightbox_js');
-
-	// Load functions.js
-	function fustattoos_js() {
-		wp_register_script('functions', get_template_directory_uri() . '/js/functions.js', false, '', true);
-		wp_enqueue_script('functions');
-	}
-	add_action('wp_enqueue_scripts', 'fustattoos_js');
+	add_action( 'wp_enqueue_scripts', 'fustattoos_theme_js' );
+	///////////////////////////////
 
 	
 	add_action('init', 'removeHeadLinks');

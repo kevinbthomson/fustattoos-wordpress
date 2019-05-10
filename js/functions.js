@@ -1,16 +1,17 @@
 $(function() {
 
 	// the Window width
-	var width = $(window).width();
+	let width = $(window).width();
 
 	// Add data-lightbox attribute to portfolio img links
-	var thumbnails = $('article #portfolio a:has(img)').filter( function() { return /\.(jpe?g|png|gif|bmp)$/i.test($(this).attr('href')) });
+	const thumbnails = $('article #portfolio a:has(img)').filter(function() {
+		return /\.(jpe?g|png|gif|bmp)$/i.test($(this).attr('href'));
+	});
 	thumbnails.attr('data-lightbox','lightbox');
 
 
 	// Toggle Main Navigation on "Mobile"
 	$('header#main-header button, .mobile-menu-overlay').on('click', function() {
-
 		if ($(this).hasClass('active')) {
 			$('header#main-header button, html, body, nav, .mobile-menu-overlay').removeClass('active');
 		} else {
@@ -20,7 +21,6 @@ $(function() {
 				$('header#main-header').removeClass('toTop');
 			}
 		}
-		
 	});
 
 	// toggle the sub-menu
@@ -83,5 +83,15 @@ $(function() {
   		var nameValue = $(this).attr('name');
   		$(this).attr('id', nameValue);
 	});
+
+	// Homepage INstaGrams
+	if ($('#instas')) {
+		instafetch.init({
+			accessToken: '1259105049.1677ed0.c44d3d929daa487fa156435be8977fb5',
+			target: 'instas',
+			numOfPics: 4,
+			caption: true
+		});
+	}
 
 }); // /document.ready
