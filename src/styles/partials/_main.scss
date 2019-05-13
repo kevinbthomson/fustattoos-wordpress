@@ -98,7 +98,7 @@ article {
       columns: 1;
 
       @include breakpoint(phablet) {
-        columns: 2;
+        // columns: 2;
 
         p:first-child {
           column-span: all;

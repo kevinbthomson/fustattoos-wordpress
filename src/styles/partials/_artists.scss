@@ -70,9 +70,6 @@
         }
       }
 
-      @include breakpoint(phablet) {
-      }
-
       @include breakpoint(tablet) {
         float: left;
         width: 40%;
@@ -82,9 +79,6 @@
         width: 35%;
         margin-left: 5%;
         padding-left: 0;
-      }
-
-      @include breakpoint(desktop) {
       }
 
       p:first-child {
@@ -111,23 +105,39 @@
         margin-right: 5%;
       }
 
-      a {
-        display: block;
-        float: left;
-        width: 33.333%;
-        padding: 0.5rem;
-        line-height: 0;
+      > p {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
 
         @include breakpoint(phablet) {
-          width: 25%;
+          grid-template-columns: repeat(4, 1fr);
         }
 
         @include breakpoint(tablet) {
-          width: 20%;
+          grid-template-columns: repeat(5, 1fr);
         }
 
         @include breakpoint(desktop) {
-          width: 16.6666%;
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+
+      a {
+        display: block;
+        // float: left;
+        // width: 33.333%;
+
+        @include breakpoint(phablet) {
+          // width: 25%;
+        }
+
+        @include breakpoint(tablet) {
+          // width: 20%;
+        }
+
+        @include breakpoint(desktop) {
+          // width: 16.6666%;
         }
 
         img {

@@ -16,11 +16,8 @@
 				<h1><?php the_title(); ?></h1>
 			</header>
 
-			<div class="container">
-				<div id="instas"></div>
-			</div>
-
 			<div class="content">
+				<div id="instas"></div>
 				<?php the_content(); ?>
 			</div>
 

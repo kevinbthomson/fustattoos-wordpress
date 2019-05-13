@@ -1,45 +1,26 @@
 aside {
   padding: $margin;
   width: 100%;
-  background: rgba(black, 0.2);
-  background: lighten($gold, 20%);
-  text-shadow: 0 1px 1px rgba(white, 0.5);
+  background: $gold;
+  color: white;
+  text-shadow: 0 1px 1px rgba($dark-gold, 0.5);
 
   h2 {
     @include hwt-slab;
     color: $dark-gold;
     margin: 0;
+    text-shadow: 0 1px 1px rgba(white, 0.5);
   }
 
   p {
     margin: 0 0 $margin 0;
   }
 
-  /* Instagram */
-  #sb_instagram {
-    overflow: hidden;
-
-    .sbi_item {
-      .sbi_photo_wrap {
-        a {
-          margin: 0 0.5rem 0.5rem 0;
-        }
-      }
-
-      &:nth-child(4n + 4) {
-        .sbi_photo_wrap {
-          a {
-            /*margin-right: 0;*/
-          }
-        }
-      }
-    }
-  }
-
   @include breakpoint(tablet) {
     float: right;
     width: 40%;
     background: none transparent;
+    color: $dark-gold;
     text-shadow: none;
   }
 

@@ -164,7 +164,8 @@ header#main-header {
           border: 0;
           line-height: 3rem;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background: rgba(black, 0.1);
             border: none;
           }
